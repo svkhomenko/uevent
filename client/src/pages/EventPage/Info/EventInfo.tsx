@@ -64,7 +64,7 @@ const EventInfo = ({ event, company, setEdit }: PropType) => {
     userId: Number(user.id),
   });
 
-  const isVisitor = data?.events?.length !== 0;
+  const isVisitor = data ? data?.events?.length !== 0 : false;
 
   const isEnded = Number(new Date()) - Number(new Date(event.date)) > 0;
   const isPublished = Number(new Date()) - Number(new Date(event.publishDate)) > 0;
@@ -138,7 +138,7 @@ const EventInfo = ({ event, company, setEdit }: PropType) => {
               <Button
                 isLoading={isVisitorFetching}
                 onClick={onFormOpen}
-                isDisabled={!e.tickets || isVisitor || isEnded || !isPublished}
+                isDisabled={!e.tickets || isVisitor || isEnded || !isPublished || !user.id}
                 size="lg"
                 colorScheme="blue"
                 mt="4"
