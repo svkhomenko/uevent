@@ -30,6 +30,10 @@
 
 <br/>
 
+## Demo
+
+[Demo video](https://youtu.be/nUErIMJcQec)
+
 ## Install & run
 
 [Server](api/README.md)
